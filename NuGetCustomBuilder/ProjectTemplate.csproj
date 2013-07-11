@@ -63,7 +63,7 @@
     Outputs="Package.log">
 
     <ItemGroup>
-      <NuGetExe Include="$(ProjectDir)..\**\NuGet.exe" />
+      <NuGetExe Include="$(ProjectDir)..\packages\Nuget.CommandLine.*\**\NuGet.exe" />
     </ItemGroup>
     <Exec Command="@(NuGetExe) pack $safeprojectname$.nuspec -OutputDirectory $(TargetDir)" />
     <ItemGroup>

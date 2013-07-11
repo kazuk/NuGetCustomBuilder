@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F6BA89
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetCustomBuilder3", "NuGetCustomBuilder3\NuGetCustomBuilder3.csproj", "{59031E03-3903-45B6-A93E-1962640CF9D5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,10 +23,6 @@ Global
 		{055D7EAE-1548-4266-BF78-FBE9665354B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{055D7EAE-1548-4266-BF78-FBE9665354B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{055D7EAE-1548-4266-BF78-FBE9665354B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59031E03-3903-45B6-A93E-1962640CF9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59031E03-3903-45B6-A93E-1962640CF9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59031E03-3903-45B6-A93E-1962640CF9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59031E03-3903-45B6-A93E-1962640CF9D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
