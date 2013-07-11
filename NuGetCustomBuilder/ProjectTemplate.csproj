@@ -44,10 +44,10 @@
 		<Reference Include="System.Xml"/>
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="Class1.cs" />
-
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
+    <None Include="$safeprojectname$.nuspec"/>
+    <None Include="$safeprojectname$.targets"/>
+    <None Include="$safeprojectname$.props"/>
+  </ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -56,5 +56,19 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target
+    Name="Package"
+    AfterTargets="Build"
+    Inputs="$safeprojectname$.nuspec;$safeprojectname$.targets;$safeprojectname$.props"
+    Outputs="Package.log">
 
+    <ItemGroup>
+      <NuGetExe Include="$(ProjectDir)..\**\NuGet.exe" />
+    </ItemGroup>
+    <Exec Command="@(NuGetExe) pack $safeprojectname$.nuspec -OutputDirectory $(TargetDir)" />
+    <ItemGroup>
+      <LogLine Include="$(TargetDir)\*.nupkg" />
+    </ItemGroup>
+    <WriteLinesToFile File="Package.log" Lines="@(LogLine)" />
+  </Target>
  </Project>

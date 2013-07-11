@@ -58,8 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AssemblyInfo.cs" />
-    <None Include="Class1.cs" />
+    <None Include="NuGet.CommandLine.2.6.1.nupkg" />
+    <None Include="Project.nuspec" />
+    <None Include="Project.props" />
+    <None Include="Project.targets" />
     <None Include="ProjectTemplate.csproj" />
     <None Include="NuGetCustomBuilder.ico" />
   </ItemGroup>
