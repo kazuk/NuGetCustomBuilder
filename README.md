@@ -1,6 +1,6 @@
-# NuGetCustomBuilder readme
+ï»¿# NuGetCustomBuilder readme
 
- NuGet ƒpƒbƒP[ƒW‚É targets ‚Æ props ‚Ì MsBuild ƒvƒƒWƒFƒNƒgƒtƒ@ƒCƒ‹‚ğ‘g‚İ‚ñ‚Å
-ƒJƒXƒ^ƒ€ƒrƒ‹ƒhˆ—‚ğƒpƒbƒP[ƒW‰»‚·‚éˆ×‚ÌƒvƒƒWƒFƒNƒgƒeƒ“ƒvƒŒ[ƒg‚Å‚·B
+ NuGet ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã« targets ã¨ props ã® MsBuild ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’çµ„ã¿è¾¼ã‚“ã§
+ã‚«ã‚¹ã‚¿ãƒ ãƒ“ãƒ«ãƒ‰å‡¦ç†ã‚’ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åŒ–ã™ã‚‹ç‚ºã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã§ã™ã€‚
 
 
