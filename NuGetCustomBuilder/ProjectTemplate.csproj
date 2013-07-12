@@ -65,7 +65,7 @@
     <ItemGroup>
       <NuGetExe Include="$(ProjectDir)..\packages\Nuget.CommandLine.*\**\NuGet.exe" />
     </ItemGroup>
-    <Exec Command="&quot;@(NuGetExe)&quot; pack $safeprojectname$.nuspec -OutputDirectory $(TargetDir)" />
+    <Exec Command="&quot;@(NuGetExe)&quot; pack $safeprojectname$.nuspec -OutputDirectory $(OutDir)" />
     <ItemGroup>
       <LogLine Include="$(TargetDir)\*.nupkg" />
     </ItemGroup>
