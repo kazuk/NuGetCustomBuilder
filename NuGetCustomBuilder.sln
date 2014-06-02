@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetCustomBuilder", "NuGetCustomBuilder\NuGetCustomBuilder.csproj", "{055D7EAE-1548-4266-BF78-FBE9665354B1}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2BFCCB3F-0031-4F4E-B3FF-D13C049913E7}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F6BA89
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetCustomBuilder", "NuGetCustomBuilder\NuGetCustomBuilder.csproj", "{055D7EAE-1548-4266-BF78-FBE9665354B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

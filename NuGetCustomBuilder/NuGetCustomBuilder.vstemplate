@@ -2,7 +2,7 @@
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>NuGetCustomBuilder</Name>
-    <Description>NuGetCustomBuilder v1.0.1 </Description>
+    <Description>NuGetCustomBuilder v1.0.2 </Description>
     <Icon>NuGetCustomBuilder.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
@@ -17,7 +17,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.nuspec">Project.nuspec</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.targets">Project.targets</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.props">Project.props</ProjectItem>
-      <ProjectItem>NuGet.CommandLine.2.6.1.nupkg</ProjectItem>
+      <ProjectItem>NuGet.CommandLine.2.8.1.nupkg</ProjectItem>
     </Project>
   </TemplateContent>
   <WizardExtension>
@@ -26,7 +26,7 @@
   </WizardExtension>
   <WizardData>
     <packages repository="template">
-      <package id="NuGet.CommandLine" version="2.6.1" />
+      <package id="NuGet.CommandLine" version="2.8.1" />
     </packages>
   </WizardData>
 </VSTemplate>

@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<PropertyGroup>
+  <PropertyGroup Condition="Exists('$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll')">
+    <CodeTaskFactoryAssembly>$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll</CodeTaskFactoryAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="Exists('$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll')">
+    <CodeTaskFactoryAssembly>$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll</CodeTaskFactoryAssembly>
+  </PropertyGroup>
+  
+  <PropertyGroup>
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>8.0.30703</ProductVersion>
@@ -56,16 +63,40 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <UsingTask
+  TaskName="SelectLast"
+  TaskFactory="CodeTaskFactory"
+  AssemblyFile="$(CodeTaskFactoryAssembly)" >
+    <ParameterGroup>
+      <Items ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" />
+      <Result ParameterType="System.String" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.Linq" />
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+    Result=Items.Last().ItemSpec;
+]]>
+      </Code>
+    </Task>
+  </UsingTask>
+  
   <Target
     Name="Package"
     AfterTargets="Build"
     Inputs="$safeprojectname$.nuspec;$safeprojectname$.targets;$safeprojectname$.props"
     Outputs="Package.log">
-
+    <PropertyGroup Condition="'$(SolutionDir)'=='*Undefined*'">
+      <SolutionDir>$(MSBuildProjectDirectory)\..</SolutionDir>
+    </PropertyGroup>
     <ItemGroup>
-      <NuGetExe Include="$(ProjectDir)..\packages\Nuget.CommandLine.*\**\NuGet.exe" />
+      <NugetExe Include="$(SolutionDir)\packages\NuGet.CommandLine.*\**\Nuget.exe" />
     </ItemGroup>
-    <Exec Command="&quot;@(NuGetExe)&quot; pack $safeprojectname$.nuspec -OutputDirectory $(OutDir)" />
+    <SelectLast Items="@(NugetExe)" >
+      <Output PropertyName="nugetLatest" TaskParameter="Result" />
+    </SelectLast>
+    <Exec Command="&quot;$(nugetLatest)&quot; pack $safeprojectname$.nuspec -OutputDirectory $(OutDir)" />
     <ItemGroup>
       <LogLine Include="$(TargetDir)\*.nupkg" />
     </ItemGroup>
